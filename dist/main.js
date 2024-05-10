@@ -33,6 +33,7 @@ async function run() {
         const octokit = github.getOctokit(token);
         const ref = github.context.ref;
         console.log(ref);
+        core.setFailed(`Invalid branch name`);
     }
     catch (err) {
         core.setFailed(err.message);
