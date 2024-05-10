@@ -12,6 +12,7 @@ async function run(): Promise<void> {
         const ref = github.context.ref
         console.log(ref);
 
+        core.setFailed(`Invalid branch name`);
 
     }
     catch (err: any) {
