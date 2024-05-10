@@ -2,15 +2,12 @@ name: Test Branch Name Action
 on: [push, pull_request]
 
 jobs:
-    test:
+    check-branch-name:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
-        - name: Setup Node.js
-          uses: actions/setup-node@v2
-          with:
-            node-version: '20'
-        - name: Install dependencies
-          run: npm install
-        - name: Build
-          run: npm run build
+      - uses: actions/checkout@v2
+      - name: 'Check branch name'
+        uses: ./
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          patterns: "feature/,fix/,chore/"
