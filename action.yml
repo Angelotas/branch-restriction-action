@@ -1,0 +1,19 @@
+name: 'Check branch name'
+description: 'Check if the branch name follows specific patters.'
+inputs:
+  github_token:
+    description: 'GitHub Token for authentication'
+    required: true
+  message:
+    description: 'Message to show when brach name does not match.'
+    required: false
+    default: 'Branch name not allowed!'
+  patterns:
+    description: 'Comma-separated list of allowed branch name patterns (e.g., "feature/,fix/,chore/")'
+    required: true
+runs:
+  using: "node20"
+  main: 'dist/index.js'
+  
+
+

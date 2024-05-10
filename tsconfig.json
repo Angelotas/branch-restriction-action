@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,    // Permite interoperabilidad de módulos ES6 con CommonJS.
+    "skipLibCheck": true,       // Omite la verificación de tipos en las declaraciones de las librerías.
+    "forceConsistentCasingInFileNames": true // Asegura que el uso de mayúsculas y minúsculas sea consistente en las importaciones.
+  },
+  "include": [
+    "src/**/*.ts" // Incluye todos los archivos TypeScript en el directorio src.
+  ],
+  "exclude": [
+    "node_modules", // Excluye el directorio node_modules.
+    "**/*.spec.ts"  // Excluye los archivos de prueba.
+  ]
+}
