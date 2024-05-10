@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "commonjs",
+    "module": "NodeNext",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,    // Permite interoperabilidad de módulos ES6 con CommonJS.
     "skipLibCheck": true,       // Omite la verificación de tipos en las declaraciones de las librerías.
-    "forceConsistentCasingInFileNames": true // Asegura que el uso de mayúsculas y minúsculas sea consistente en las importaciones.
+    "forceConsistentCasingInFileNames": true, // Asegura que el uso de mayúsculas y minúsculas sea consistente en las importaciones.
+    "ignoreDeprecations": "5.0"
   },
   "include": [
     "src/**/*.ts" // Incluye todos los archivos TypeScript en el directorio src.
