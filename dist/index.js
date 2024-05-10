@@ -29232,7 +29232,7 @@ async function run() {
             core.setFailed(`El nombre de la rama "${branchName}" no coincide con los patrones permitidos: ${patterns.join(', ')}.`);
         }
         else {
-            console.log('El nombre de la rama es válido.');
+            console.log('El nombre de la rama es válido 🚀');
         }
     }
     catch (err) {
