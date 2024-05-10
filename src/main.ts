@@ -6,13 +6,18 @@ async function run(): Promise<void> {
         const token = core.getInput('github_token', { required: true })
         const patterns = core.getInput('patterns', { required: true }).split(',').map(s => s.trim());
 
-        // Crea una instancia del cliente de GitHub con el token proporcionado
         const octokit = github.getOctokit(token);
 
         const ref = github.context.ref
-        console.log(ref);
+        const branchName = ref.replace('refs/heads/', '');
+        console.log(`El nombre de la rama es: ${branchName}`);
 
-        core.setFailed(`Invalid branch name`);
+        const isValid = patterns.some(pattern => new RegExp(`^${pattern}`).test(branchName));
+        if (!isValid) {
+            core.setFailed(`El nombre de la rama "${branchName}" no coincide con los patrones permitidos: ${patterns.join(', ')}.`);
+        } else {
+            console.log('El nombre de la rama es válido.');
+        }
 
     }
     catch (err: any) {
